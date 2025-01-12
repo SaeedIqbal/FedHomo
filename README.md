@@ -116,25 +116,25 @@ The `HierarchicalPrototyping` class is responsible for initializing and updating
 
 ```python
 class HierarchicalPrototyping:
-    def __init__(self, clients):
-        # Initialize hierarchical prototyping with clients
-        pass
+        def __init__(self, clients):
+            # Initialize hierarchical prototyping with clients
+            pass
 
-    def initialize_prototypes(self):
-        # Initialize global and local prototypes
-        pass
+        def initialize_prototypes(self):
+            # Initialize global and local prototypes
+            pass
 
-    def calculate_adaptive_weights(self):
-        # Calculate adaptive weights for prototypes
-        pass
+        def calculate_adaptive_weights(self):
+            # Calculate adaptive weights for prototypes
+            pass
 
-    def update_prototypes(self):
-        # Update prototypes based on adaptive weights
-        pass
+        def update_prototypes(self):
+            # Update prototypes based on adaptive weights
+            pass
 
-    def enforce_consistency(self, mu=0.1, nu=0.1):
-        # Enforce consistency between prototypes
-        pass
+        def enforce_consistency(self, mu=0.1, nu=0.1):
+            # Enforce consistency between prototypes
+            pass
 ```
 
 ## Usage
@@ -179,4 +179,44 @@ Contributions are not currently accepted due to the project's funding restrictio
 For any inquiries, please contact [saeed.iqbal@szu.edu.cn](mailto:saeed.iqbal@szu.edu.cn).
 
 
+## References for Datasets
+
+Here are the references for the datasets used in this project:
+
+### UCI Heart Disease Dataset
+- **Source**: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/heart+Disease)
+- **Description**: This dataset contains various attributes related to heart disease diagnosis. It includes features such as age, sex, cholesterol levels, and more. You can download the dataset directly from the UCI Machine Learning Repository.
+
+### MIMIC-III Dataset
+- **Source**: [MIMIC-III Clinical Database](https://mimic.physionet.org/)
+- **Description**: A large, freely accessible critical care database. Access to this dataset requires credentialing through PhysioNet. You need to complete a training course and sign a data use agreement to obtain access.
+
+### CURIAL Dataset
+- **Source**: [CURIAL Dataset Repository]()
+- **Description**: (Please provide the actual source if available) The CURIAL dataset is used for specific research purposes. It may require permission from the dataset maintainers. You should contact the relevant authorities for access.
+
+### ChestMNIST
+- **Source**: [ChestMNIST Dataset](https://www.kaggle.com/datasets/kmader/chest-xray-pneumonia)
+- **Description**: A dataset of chest X-ray images. You can download it from Kaggle. Please check Kaggle's terms of use and ensure compliance with their policies.
+
+### Brain Tumor Segmentation (BraTS) Dataset
+- **Source**: [BraTS Challenge](https://www.med.upenn.edu/cbica/brats2020/data.html)
+- **Description**: A dataset for brain tumor segmentation. It is used in the BraTS challenge, and you can find the dataset and registration information on the provided link.
+
+### PathMNIST
+- **Source**: [PathMNIST Dataset](https://zenodo.org/record/12144568)
+- **Description**: A histopathology dataset. You can access it through Zenodo, which provides various options for downloading and citing the dataset.
+
+### MIT-BIH Arrhythmia Dataset
+- **Source**: [MIT-BIH Arrhythmia Database](https://physionet.org/content/mitdb/1.0.0/)
+- **Description**: A database of electrocardiogram (ECG) signals. It is available through PhysioNet. You may need to follow their procedures for accessing and using the data.
+
+### Pediatric MRI Dataset
+- **Source**: [Pediatric MRI Dataset Repository]()
+- **Description**: (Please provide the actual source if available) If you are using a specific Pediatric MRI dataset, provide the source here. Some Pediatric MRI datasets may have restricted access due to patient privacy concerns, and you may need to follow specific procedures for access.
+
+
 This README provides an overview of the current state of the project, its components, and future directions. Stay tuned for updates as we continue to develop and improve the federated learning framework.
+
+
+This updated README includes a section for references, providing information about the sources of the datasets used in the project. You should update the links and descriptions if there are any inaccuracies or missing information. Additionally, if you have not used all the mentioned datasets, you can remove the corresponding entries. Remember to replace the placeholder links and descriptions for datasets where information is not provided with accurate and appropriate information.
