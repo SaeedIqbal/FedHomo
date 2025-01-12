@@ -1,35 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Federated Learning Framework</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-      .code-block {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-    </style>
-</head>
-<body>
-    <h1>Federated Learning Framework</h1>
-    <p>This repository contains the code for a federated learning framework with a focus on optimizing client participation through dynamic client selection. The framework is designed to work with various datasets and incorporates techniques for secure aggregation and hierarchical prototyping. However, the code is still under development and not complete. Due to restrictions from the project funding agency, we are unable to release the complete code until the project is finished.</p>
+# Federated Learning Framework
 
-    <h2>Overview</h2>
-    <p>The federated learning framework consists of several components, including data handling, client-side training, server-side aggregation, and techniques for optimizing client participation. The following sections provide an overview of the main components and their functionalities.</p>
+This repository contains the code for a federated learning framework with a focus on optimizing client participation through dynamic client selection. The framework is designed to work with various datasets and incorporates techniques for secure aggregation and hierarchical prototyping. However, the code is still under development and not complete. Due to restrictions from the project funding agency, we are unable to release the complete code until the project is finished.
 
-    <h3>Data Handling</h3>
-    <p>The <code>DataHandler</code> class is responsible for loading different datasets. It supports multiple datasets such as CURIAL, MIMIC-III, UCI Heart Disease, ChestMNIST, Brain Tumor Segmentation, PathMNIST, MIT-BIH Arrhythmia, and Pediatric MRI. It handles data preprocessing, scaling, and splitting into training, validation, and test sets. It uses PyTorch's <code>DataLoader</code> for efficient data loading and batching.</p>
-    <div class="code-block">
-        <pre>
+## Overview
+
+The federated learning framework consists of several components, including data handling, client-side training, server-side aggregation, and techniques for optimizing client participation. The following sections provide an overview of the main components and their functionalities.
+
+### Data Handling
+
+The `DataHandler` class is responsible for loading different datasets. It supports multiple datasets such as CURIAL, MIMIC-III, UCI Heart Disease, ChestMNIST, Brain Tumor Segmentation, PathMNIST, MIT-BIH Arrhythmia, and Pediatric MRI. It handles data preprocessing, scaling, and splitting into training, validation, and test sets. It uses PyTorch's `DataLoader` for efficient data loading and batching.
+
+```python
 class DataHandler:
     def __init__(self, dataset_name):
         # Initialize data handler
@@ -42,13 +23,13 @@ class DataHandler:
     def prepare_data(self, batch_size=32):
         # Prepare data loaders for training, validation, and testing
         pass
-        </pre>
-    </div>
+```
 
-    <h3>Client Class</h3>
-    <p>The <code>Client</code> class represents a client in the federated learning setup. Each client has its own dataset, model, and optimizer. It is responsible for training its local model and evaluating the model's performance.</p>
-    <div class="code-block">
-        <pre>
+### Client Class
+
+The `Client` class represents a client in the federated learning setup. Each client has its own dataset, model, and optimizer. It is responsible for training its local model and evaluating the model's performance.
+
+```python
 class Client:
     def __init__(self, client_id, train_loader, val_loader, test_loader):
         # Initialize client with its ID and data loaders
@@ -65,13 +46,13 @@ class Client:
     def evaluate(self, loader):
         # Evaluate the client's model on a given data loader
         pass
-        </pre>
-    </div>
+```
 
-    <h3>Server Class</h3>
-    <p>The <code>Server</code> class manages multiple clients and aggregates their model updates. It also incorporates dynamic client selection and adaptive participation rates.</p>
-    <div class="code-block">
-        <pre>
+### Server Class
+
+The `Server` class manages multiple clients and aggregates their model updates. It also incorporates dynamic client selection and adaptive participation rates.
+
+```python
 class Server:
     def __init__(self, num_clients):
         # Initialize server with number of clients
@@ -104,13 +85,13 @@ class Server:
     def calculate_data_diversity(self, client):
         # Calculate data diversity of a client
         pass
-        </pre>
-    </div>
+```
 
-    <h3>Secure Aggregation</h3>
-    <p>The <code>SecureAggregator</code> class implements the Paillier cryptosystem for secure aggregation of model updates. It includes key generation, encryption, aggregation, and decryption functions.</p>
-    <div class="code-block">
-        <pre>
+### Secure Aggregation
+
+The `SecureAggregator` class implements the Paillier cryptosystem for secure aggregation of model updates. It includes key generation, encryption, aggregation, and decryption functions.
+
+```python
 class SecureAggregator:
     def __init__(self, bits=512):
         # Initialize with Paillier key generation
@@ -127,13 +108,13 @@ class SecureAggregator:
     def decrypt(self, ciphertext):
         # Decrypt ciphertext using Paillier cryptosystem
         pass
-        </pre>
-    </div>
+```
 
-    <h3>Hierarchical Prototyping</h3>
-    <p>The <code>HierarchicalPrototyping</code> class is responsible for initializing and updating prototypes, calculating adaptive weights, and enforcing consistency between local and global prototypes.</p>
-    <div class="code-block">
-        <pre>
+### Hierarchical Prototyping
+
+The `HierarchicalPrototyping` class is responsible for initializing and updating prototypes, calculating adaptive weights, and enforcing consistency between local and global prototypes.
+
+```python
 class HierarchicalPrototyping:
     def __init__(self, clients):
         # Initialize hierarchical prototyping with clients
@@ -154,13 +135,13 @@ class HierarchicalPrototyping:
     def enforce_consistency(self, mu=0.1, nu=0.1):
         # Enforce consistency between prototypes
         pass
-        </pre>
-    </div>
+```
 
-    <h2>Usage</h2>
-    <p>Here is a basic example of how to use the framework:</p>
-    <div class="code-block">
-        <pre>
+## Usage
+
+Here is a basic example of how to use the framework:
+
+```python
 if __name__ == "__main__":
     data_handler = DataHandler('UCI Heart Disease')
     data_handler.prepare_data(batch_size=32)
@@ -172,27 +153,30 @@ if __name__ == "__main__":
     server.register_client(client2)
     server.register_client(client3)
     server.federated_train()
-        </pre>
-    </div>
+```
 
-    <h2>Future Work</h2>
-    <p>The following aspects of the code are still under development and will be updated in the future:</p>
-    <ul>
-        <li>Completion of the <code>HierarchicalPrototyping</code> class, including more sophisticated loss calculations and prototype updates.</li>
-        <li>Enhancement of the <code>SecureAggregator</code> class for better security and performance.</li>
-        <li>Further optimization of the dynamic client selection mechanism, including more accurate energy consumption tracking and refined distance metrics for data diversity.</li>
-        <li>Integration of additional datasets and models.</li>
-    </ul>
+## Future Work
 
-    <h2>License</h2>
-    <p>This code is developed under the restrictions of the project funding agency, and as such, the full code is not available for public release at this time. We aim to provide more complete and optimized code upon project completion. Please check back for updates.</p>
+The following aspects of the code are still under development and will be updated in the future:
+- Completion of the `HierarchicalPrototyping` class, including more sophisticated loss calculations and prototype updates.
+- Enhancement of the `SecureAggregator` class for better security and performance.
+- Further optimization of the dynamic client selection mechanism, including more accurate energy consumption tracking and refined distance metrics for data diversity.
+- Integration of additional datasets and models.
 
-    <h2>Contributing</h2>
-    <p>Contributions are not currently accepted due to the project's funding restrictions. We will update the repository and contribution guidelines once the project is complete.</p>
 
-    <h2>Contact</h2>
-    <p>For any inquiries, please contact <a href="mailto:saeed.iqbal@szu.edu.cn">saeed.iqbal@szu.edu.cn</a>.</p>
+## License
 
-    <p>This README provides an overview of the current state of the project, its components, and future directions. Stay tuned for updates as we continue to develop and improve the federated learning framework.</p>
-</body>
-</html>
+This code is developed under the restrictions of the project funding agency, and as such, the full code is not available for public release at this time. We aim to provide more complete and optimized code upon project completion. Please check back for updates.
+
+
+## Contributing
+
+Contributions are not currently accepted due to the project's funding restrictions. We will update the repository and contribution guidelines once the project is complete.
+
+
+## Contact
+
+For any inquiries, please contact [saeed.iqbal@szu.edu.cn](mailto:saeed.iqbal@szu.edu.cn).
+
+
+This README provides an overview of the current state of the project, its components, and future directions. Stay tuned for updates as we continue to develop and improve the federated learning framework.
