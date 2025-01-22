@@ -217,6 +217,3 @@ Here are the references for the datasets used in this project:
 
 
 This README provides an overview of the current state of the project, its components, and future directions. Stay tuned for updates as we continue to develop and improve the federated learning framework.
-
-
-This updated README includes a section for references, providing information about the sources of the datasets used in the project. You should update the links and descriptions if there are any inaccuracies or missing information. Additionally, if you have not used all the mentioned datasets, you can remove the corresponding entries. Remember to replace the placeholder links and descriptions for datasets where information is not provided with accurate and appropriate information.
